@@ -4,25 +4,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reset.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | FAQ Accordion Card</title>
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+  <main class="faq">
+    <div class="faq__image">
+      <img src="images/illustration-woman-online-mobile.svg" alt="" class="faq__image-mobile">
+      <img src="images/bg-pattern-mobile.svg" class="faq__image-mobile--bg" alt="">
+      <img src="images/illustration-box-desktop.svg" alt="" class="faq__image-desktop">
+      <img src="images/illustration-woman-online-desktop.svg" alt="" class="faq__image-desktop">
+      <img src="images/bg-pattern-mobile.svg" alt="" class="faq__image-desktop">
+    </div>
+    <p class="faq__title">
+      FAQ
+    </p>
+    <button class="faq__question">
+        How many team members can I invite?
+    </button>
+    <p class="faq__answer">
+      You can invite up to 2 additional users on the Free plan. There is no limit on 
+      team members for the Premium plan.
+    </p>
+    <div class="faq__divider"></div>
+    <!-- Leaving these active classes here to match up in the design comparison. -->
+    <button class="faq__question faq__question--active">
+      What is the maximum file upload size?
+    </button>
+    <p class="faq__answer faq__answer--active">
+      No more than 2GB. All files in your account must fit your allotted storage space.
+    </p>
+    <div class="faq__divider"></div>
+    <button class="faq__question">
+      How do I reset my password?
+    </button>
+    <p class="faq__answer">
+      Click “Forgot password” from the login page or “Change password” from your profile page.
+      A reset link will be emailed to you.
+    </p>
+    <div class="faq__divider"></div>
+    <button class="faq__question">
+      Can I cancel my subscription?
+    </button>
+    <p class="faq__answer">
+      Yes! Send us a message and we’ll process your request no questions asked.
+    </p>
+    <div class="faq__divider"></div>
+    <button class="faq__question">
+      Do you provide additional support? 
+    </button>
+    <p class="faq__answer">
+      Chat and email support is available 24/7. Phone lines are open during normal business hours.
+    </p>
+    <div class="faq__divider"></div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
