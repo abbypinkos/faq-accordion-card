@@ -8,6 +8,7 @@
     /* Gradient */
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
+
     /* Neutral */
     /* Text */
     --very-dark-grayish-blue: hsl(237, 12%, 33%);
@@ -15,3 +16,106 @@
     /* Dividers */
     --light-grayish-blue: hsl(240, 5%, 91%);
 }
+
+body {
+    background: var(--soft-violet);
+    background: -webkit-linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+    background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+    color: var(--very-dark-desaturated-blue);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    display: grid;
+    place-items: center;
+    align-content: center;
+}
+
+.faq {
+    margin-top: 4rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    width: 87vw;
+    padding: 0 1.5rem 3rem;
+    -webkit-box-shadow: 0px 20px 20px 0px rgb(49 12 82 / 25%);
+    box-shadow: 0px 30px 30px 0px rgb(49 12 82 / 25%);
+}
+
+.faq__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.faq__image-mobile {
+    display: initial;
+    position: absolute;
+    transform: translateX(-5%) translateY(-32%);
+}
+
+.faq__image-desktop {
+    display: none;
+}
+
+.faq__divider {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    width: 100%;
+}
+
+.faq__title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding-block: 1.5rem 0.75rem;
+}
+
+.faq__question {
+    background: transparent;
+    color: var(--very-dark-grayish-blue);
+    font-size: 0.8rem;
+    word-spacing: 1px;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
+}
+
+.faq__question::after {
+    content: url(../images/icon-arrow-down.svg);
+    display: block;
+}
+
+.faq__question--active {
+    color: var(--very-dark-desaturated-blue);
+    font-weight: 700;
+    padding-block: 1rem 0.6rem;
+}
+
+.faq__question--active::after {
+    content: url(../images/icon-arrow-down.svg);
+    transform: rotate(180deg);
+}
+
+.faq__answer {
+    color: var(--dark-grayish-blue);
+    padding-bottom: 1rem;
+    width: 90%;
+    display: none;
+}
+
+.faq__answer--active {
+    display: block;
+}
+
+/* 
+    To-do:
+        - Media query for desktop layout
+        - Hover states for desktop
+            - Question text color "soft-red"
+            - Image "illustration-box-desktop.svg" moves to left
+*/
