@@ -51,26 +51,27 @@ body {
 .faq__image-mobile {
     display: initial;
     position: absolute;
-    transform: translateX(-5%) translateY(-32%);
+    transform: translateX(-6%) translateY(-32%);
 }
 
-.faq__image-desktop {
+.faq__image-desktop, 
+.faq__image-desktop-block {
     display: none;
 }
 
-.faq__divider {
+.faq__text-divider {
     border-bottom: 1px solid var(--light-grayish-blue);
     width: 100%;
 }
 
-.faq__title {
+.faq__text-title {
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
     padding-block: 1.5rem 0.75rem;
 }
 
-.faq__question {
+.faq__text-question {
     background: transparent;
     color: var(--very-dark-grayish-blue);
     font-size: 0.8rem;
@@ -85,37 +86,138 @@ body {
     cursor: pointer;
 }
 
-.faq__question::after {
+.faq__text-question::after {
     content: url(../images/icon-arrow-down.svg);
     display: block;
 }
 
-.faq__question--active {
+.faq__text-question--active {
     color: var(--very-dark-desaturated-blue);
     font-weight: 700;
     padding-block: 1rem 0.6rem;
 }
 
-.faq__question--active::after {
+.faq__text-question--active::after {
     content: url(../images/icon-arrow-down.svg);
     transform: rotate(180deg);
 }
 
-.faq__answer {
+.faq__text-answer {
     color: var(--dark-grayish-blue);
     padding-bottom: 1rem;
     width: 90%;
     display: none;
 }
 
-.faq__answer--active {
+.faq__text-answer--active {
     display: block;
 }
 
-/* 
-    To-do:
-        - Media query for desktop layout
-        - Hover states for desktop
-            - Question text color "soft-red"
-            - Image "illustration-box-desktop.svg" moves to left
-*/
+@media only screen and (min-width: 768px) {
+    .faq {
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 1224px) { 
+    .faq {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 57.5rem;
+        max-width: 57.5rem;
+        padding: 0;
+        margin-top: 0;
+        background-size: 99%;
+        background-attachment: local;
+        background-repeat: no-repeat;
+        background-position: -5775% 65%;
+        background-image: url(../images/bg-pattern-desktop.svg);
+    }
+
+    .faq__image-mobile,
+    .faq__image-mobile--bg {
+        display: none;
+    }
+
+    .faq__image {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .faq__image-desktop-wrapper {
+        overflow: hidden;
+    }
+
+    .faq__image-desktop {
+        display: block;
+        object-fit: cover;
+        transform: translateX(-17%);
+        position: relative;
+    }
+
+    .faq__image-desktop-block {
+        display: block;
+        z-index: 100;
+        transform: translateX(-120%) translateY(25%);
+        filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.25));
+        position: absolute;
+    }
+
+    .faq__image-desktop-block--active {
+        animation: block--active linear 0.15s 1 normal forwards;
+    }
+    
+    .faq__image-desktop-block--inactive {
+        animation: block--inactive linear 0.15s 1 normal forwards;
+    }
+
+    .faq__text {
+        padding: 3.75rem 5rem  5rem 1rem;
+        flex: 1;
+        width: 50%;
+    }
+
+    .faq__text-title {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .faq__text-question {
+        font-size: 0.85rem;
+    }
+
+    .faq__text-question:hover {
+        color: var(--soft-red);
+    }
+
+    .faq__text-answer,
+    .faq__text-question {
+        width: 21rem;
+        margin-right: 3rem;
+    }
+
+    .faq__text-divider {
+        width: 22rem;
+    }
+}
+
+@keyframes block--active {
+    0% {
+      transform: translateX(-120%) translateY(25%);
+    }
+    100% {
+      transform: translateX(-135%) translateY(25%);
+    }
+  }
+
+  @keyframes block--inactive {
+    0% {
+      transform: translateX(-135%) translateY(25%);
+    }
+    100% {
+      transform: translateX(-120%) translateY(25%);
+    }
+  }
